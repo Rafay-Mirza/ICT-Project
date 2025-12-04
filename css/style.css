@@ -1,1 +1,469 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0a0a0f; /* dark background */
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #1a0c0f; /* darker maroonish black */
+    border-bottom: 2px solid #c41e3a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #c41e3a; /* main maroon */
+}
+
+nav a {
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff4f5a;
+}
+/* Navigation Bar Search */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Modern Rounded Search Bar */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-box input {
+    padding: 10px 15px;
+    width: 220px;
+    background: #111;                 /* dark background */
+    border: 2px solid #ff3c3c;        /* red border */
+    border-radius: 25px;              /* fully rounded */
+    color: white;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.search-box input::placeholder {
+    color: #bbb;
+}
+
+.search-box input:focus {
+    border-color: #ff6666;
+    background: #0d0d0d;
+}
+
+/* Search Button Rounded */
+.search-box button {
+    padding: 10px 18px;
+    background-color: #ff3131;
+    color: white;
+    border: none;
+    border-radius: 25px;             /* rounded button */
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #e02828;
+    transform: scale(1.05);
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #1a0c0f;
+    color: #c5c6c7;
+}
+
+/* Buttons */
+button, .watch-btn, .btn-signin {
+    background: #c41e3a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover, .watch-btn:hover, .btn-signin:hover {
+    background: #7d0f21;
+    transform: translateY(-3px);
+}
+/* Hide scrollbar in most browsers */
+.scroll-horizontal::-webkit-scrollbar 
+{
+    display: none;
+}
+.scroll-horizontal 
+{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.movie-card
+ {
+    min-width: 180px;  /* ensures horizontal scrolling works */
+}
+
+/* Hero Section */
+/* HERO SECTION - Fullscreen Background + Blur */
+.hero {
+    position: relative;
+    height: 65vh; /* increased height */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    background: url("images/download (1).jpeg") center/cover no-repeat;
+    overflow: hidden;
+    border-bottom: 3px solid #b1122d;
+}
+
+/* Blur + dark tint layer */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.55); /* dark overlay to match theme */
+}
+
+/* Content stays sharp */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.hero-left h1 {
+    font-size: 42px;
+    color: #b1122d;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.members-list {
+    font-size: 24px;
+    font-weight: 600;
+    background: #b1122d;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: #e5e5e5;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .hero {
+        height: 75vh;
+    }
+
+    .hero-left {
+        text-align: center;
+    }
+
+    .members-list {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+/* Sections */
+.section, .category, .about-container, .movie-detail-container {
+    padding: 50px;
+}
+
+/* Section Titles */
+.section h2, .category h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-left: 5px solid #c41e3a;
+    padding-left: 10px;
+}
+
+/* Movie Cards */
+.movies-grid, .movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.movie-card {
+    background: #1a0c0f;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(196,30,58,0.6);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.movie-card h3 {
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+
+
+/* About Section */
+.about-left img {
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(196,30,58,0.3);
+}
+
+.about-right h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #c41e3a;
+}
+
+.about-right p {
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* Movie Detail */
+.movie-detail-container {
+    display: flex;
+    padding: 60px;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.poster img {
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(196,30,58,0.3);
+    transition: 0.3s;
+}
+
+.poster img:hover {
+    transform: scale(1.03);
+}
+
+.movie-info h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #c41e3a;
+}
+
+.meta span {
+    margin-right: 15px;
+    color: #bdbdc6;
+}
+
+.description, .extra-info p {
+    margin: 10px 0;
+    line-height: 1.7;
+    color: #ccc;
+}
+
+/* Sign-In */
+.signin-box {
+    background: #111114;
+    width: 380px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(196,30,58,0.3);
+    border-top: 3px solid #7d0f21;
+    border-bottom: 3px solid #7d0f21;
+    margin: 60px auto;
+}
+
+.signin-box h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #c41e3a;
+    margin-bottom: 25px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #2a2a2f;
+    background: #0d0d11;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #c41e3a;
+    box-shadow: 0 0 8px rgba(196,30,58,0.4);
+    outline: none;
+}
+
+/* Responsive */
+@media(max-width:768px)
+{
+    header 
+    {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero h1 
+    {
+        font-size: 2rem;
+    }
+    .movie-detail-container, .about-container 
+    {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .poster img, .about-left img 
+    {
+        width: 100%;
+    }
+    .scroll-horizontal 
+    {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+}
+}
+
+
+
+
+
+
+
+
+
+/* Movie details panel */
+.details {
+    background: #111;
+    padding: 30px;
+    margin: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255,0,0,0.3);
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.details-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.details img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+#close-details {
+    float: right;
+    cursor: pointer;
+    color: #ff4444;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+/* Full Page Detail */
+#detail-page {
+    padding: 40px;
+}
+
+.back-btn {
+    display: inline-block;
+    color: #ff3c3c;
+    margin-bottom: 25px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.detail-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255,0,0,0.25);
+}
+
+.detail-poster {
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(196,30,58,0.4);
+}
+
+.detail-info h1 {
+    font-size: 36px;
+    color: #c41e3a;
+}
+
+.detail-info p {
+    font-size: 18px;
+    margin: 8px 0;
+    color: #ddd;
+}
+
+.detail-info h2 {
+    margin-top: 25px;
+    color: #ff3c3c;
+}
 
