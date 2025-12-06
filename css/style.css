@@ -1,4 +1,3 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +15,10 @@ a {
     color: inherit;
 }
 
-/* Header */
+/* |--------------------------------------------------------------------------
+| 2. HEADER & NAVIGATION
+|--------------------------------------------------------------------------
+*/
 header {
     display: flex;
     justify-content: space-between;
@@ -35,6 +37,12 @@ header .logo {
     color: #c41e3a; /* main maroon */
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
 nav a {
     margin-left: 25px;
     font-weight: 500;
@@ -44,14 +52,8 @@ nav a {
 nav a:hover {
     color: #ff4f5a;
 }
-/* Navigation Bar Search */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
 
-/* Modern Rounded Search Bar */
+/* Modern Rounded Search Bar (Unique to File A) */
 .search-box {
     display: flex;
     align-items: center;
@@ -61,9 +63,9 @@ nav {
 .search-box input {
     padding: 10px 15px;
     width: 220px;
-    background: #111;                 /* dark background */
-    border: 2px solid #ff3c3c;        /* red border */
-    border-radius: 25px;              /* fully rounded */
+    background: #111; 
+    border: 2px solid #ff3c3c; 
+    border-radius: 25px; 
     color: white;
     outline: none;
     transition: 0.3s ease;
@@ -78,13 +80,13 @@ nav {
     background: #0d0d0d;
 }
 
-/* Search Button Rounded */
+/* Search Button Rounded (Unique to File A) */
 .search-box button {
     padding: 10px 18px;
     background-color: #ff3131;
     color: white;
     border: none;
-    border-radius: 25px;             /* rounded button */
+    border-radius: 25px; 
     cursor: pointer;
     font-weight: 500;
     transition: 0.3s ease;
@@ -96,49 +98,101 @@ nav {
 }
 
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 25px;
-    background: #1a0c0f;
-    color: #c5c6c7;
+/* Navbar Sign-In Button (Unique to File B) */
+.signin-btn {
+    background: #7d0f21; 
+    color: #f3e8ea;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-left: 10px; 
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-/* Buttons */
-button, .watch-btn, .btn-signin {
+.signin-btn:hover {
+    background: #c41e3a;
+    transform: translateY(-2px);
+}
+
+/* |--------------------------------------------------------------------------
+| 3. BUTTONS & UTILITIES
+|--------------------------------------------------------------------------
+*/
+
+/* Standard Buttons (Consolidated - File A had more padding details) */
+button, .watch-btn, .btn-signin, .btn-signup, .btn-reset {
     background: #c41e3a;
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    padding: 12px 25px; /* From File A */
+    font-size: 18px;    /* From File A */
+    display: inline-block; /* From File A */
+    margin: 15px 0 20px 0; /* From File A */
 }
 
-button:hover, .watch-btn:hover, .btn-signin:hover {
+button:hover, .watch-btn:hover, .btn-signin:hover, .btn-signup:hover, .btn-reset:hover {
     background: #7d0f21;
     transform: translateY(-3px);
 }
-/* Hide scrollbar in most browsers */
-.scroll-horizontal::-webkit-scrollbar 
-{
+
+/* Sign-Up Button (Unique to File B - Renamed to .signup-btn for clarity) */
+.signup-btn {
+    background: #7d0f21;
+    color: #f3e8ea;
+    padding: 10px 20px; /* Overrides standard button padding */
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px; /* Overrides standard button font size */
+    box-shadow: 0 0 15px rgba(196,30,58,0.4);
+    margin: 0; /* Clear margin from standard button */
+}
+
+.signup-btn:hover {
+    background: #c41e3a;
+    box-shadow: 0 0 20px rgba(196,30,58,0.7);
+    transform: none; /* No vertical transform on this specific button */
+}
+
+/* Input/Textarea Focus (Consolidated) */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1px solid #2a2a2f;
+    background: #0d0d11;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #c41e3a;
+    box-shadow: 0 0 8px rgba(196,30,58,0.4);
+    outline: none;
+}
+
+/* Scrollbar Hide (Combined from File A and B) */
+.scroll-horizontal::-webkit-scrollbar {
     display: none;
 }
-.scroll-horizontal 
-{
+.scroll-horizontal {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;     /* Firefox */
 }
 
-.movie-card
- {
-    min-width: 180px;  /* ensures horizontal scrolling works */
-}
+/* |--------------------------------------------------------------------------
+| 4. HERO SECTION
+|--------------------------------------------------------------------------
+*/
 
-/* Hero Section */
-/* HERO SECTION - Fullscreen Background + Blur */
+/* HERO SECTION - Fullscreen Background + Blur (Unique to File A) */
 .hero {
     position: relative;
-    height: 65vh; /* increased height */
+    height: 65vh; 
     width: 100%;
     display: flex;
     align-items: center;
@@ -149,7 +203,6 @@ button:hover, .watch-btn:hover, .btn-signin:hover {
     border-bottom: 3px solid #b1122d;
 }
 
-/* Blur + dark tint layer */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -157,10 +210,9 @@ button:hover, .watch-btn:hover, .btn-signin:hover {
     right: 0;
     bottom: 0;
     backdrop-filter: blur(6px);
-    background: rgba(0, 0, 0, 0.55); /* dark overlay to match theme */
+    background: rgba(0, 0, 0, 0.55); 
 }
 
-/* Content stays sharp */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -193,28 +245,25 @@ button:hover, .watch-btn:hover, .btn-signin:hover {
     max-width: 600px;
 }
 
-/* Responsive layout */
-@media (max-width: 900px) {
-    .hero {
-        height: 75vh;
-    }
+/* |--------------------------------------------------------------------------
+| 5. SECTIONS & CARDS
+|--------------------------------------------------------------------------
+*/
 
-    .hero-left {
-        text-align: center;
-    }
-
-    .members-list {
-        display: block;
-        margin: 10px auto;
-    }
+/* Section/Category Containers (Conflicting - File B's definition is for the About/Movie Detail sections only, File A is simpler. File A kept for general sections, File B's details moved to specific selectors.) */
+.section, .category {
+    padding: 50px;
 }
-
-/* Sections */
-.section, .category, .about-container, .movie-detail-container {
+.about-container, .movie-detail-container { /* File B's layout styles added here */
+    display: flex; 
+    align-items: flex-start; 
+    justify-content: center; 
+    gap: 40px; 
     padding: 50px;
 }
 
-/* Section Titles */
+
+/* Section Titles (Unique to File A) */
 .section h2, .category h2 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -222,7 +271,7 @@ button:hover, .watch-btn:hover, .btn-signin:hover {
     padding-left: 10px;
 }
 
-/* Movie Cards */
+/* Movie Cards (Unique to File A) */
 .movies-grid, .movies {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -230,6 +279,7 @@ button:hover, .watch-btn:hover, .btn-signin:hover {
 }
 
 .movie-card {
+    min-width: 180px; /* Added from File A utility section */
     background: #1a0c0f;
     border-radius: 10px;
     overflow: hidden;
@@ -254,13 +304,22 @@ button:hover, .watch-btn:hover, .btn-signin:hover {
     font-size: 1rem;
 }
 
+.movie-card a { /* Added from File B's responsive section */
+    text-decoration: none;
+    color: inherit;
+    display: block; 
+}
 
 
+/* |--------------------------------------------------------------------------
+| 6. ABOUT SECTION
+|--------------------------------------------------------------------------
+*/
 
-/* About Section */
 .about-left img {
-    width: 350px;
-    border-radius: 15px;
+    /* CONFLICT RESOLVED: Used File A's size but File B's border-radius for slightly smoother look */
+    width: 350px; /* Used File A's size */
+    border-radius: 20px; /* Used File B's radius */
     box-shadow: 0 0 25px rgba(196,30,58,0.3);
 }
 
@@ -275,12 +334,16 @@ button:hover, .watch-btn:hover, .btn-signin:hover {
     color: #ccc;
 }
 
-/* Movie Detail */
+
+/* |--------------------------------------------------------------------------
+| 7. MOVIE DETAIL & DETAIL PANEL
+|--------------------------------------------------------------------------
+*/
+
+/* Movie Detail Page (Unique to File A) */
 .movie-detail-container {
-    display: flex;
-    padding: 60px;
-    gap: 50px;
-    align-items: flex-start;
+    /* Base layout moved to .section/etc. above. Only unique styles remain. */
+    gap: 50px; /* Re-added gap for clarity */
 }
 
 .poster img {
@@ -311,83 +374,7 @@ button:hover, .watch-btn:hover, .btn-signin:hover {
     color: #ccc;
 }
 
-/* Sign-In */
-.signin-box {
-    background: #111114;
-    width: 380px;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 25px rgba(196,30,58,0.3);
-    border-top: 3px solid #7d0f21;
-    border-bottom: 3px solid #7d0f21;
-    margin: 60px auto;
-}
-
-.signin-box h2 {
-    text-align: center;
-    font-size: 32px;
-    color: #c41e3a;
-    margin-bottom: 25px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    border-radius: 8px;
-    border: 1px solid #2a2a2f;
-    background: #0d0d11;
-    color: #fff;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-input:focus, textarea:focus {
-    border-color: #c41e3a;
-    box-shadow: 0 0 8px rgba(196,30,58,0.4);
-    outline: none;
-}
-
-/* Responsive */
-@media(max-width:768px)
-{
-    header 
-    {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .hero h1 
-    {
-        font-size: 2rem;
-    }
-    .movie-detail-container, .about-container 
-    {
-        flex-direction: column;
-        padding: 20px;
-    }
-    .poster img, .about-left img 
-    {
-        width: 100%;
-    }
-    .scroll-horizontal 
-    {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    scroll-behavior: smooth;
-}
-}
-
-
-
-
-
-
-
-
-
-/* Movie details panel */
+/* Detail Panel (File A) */
 .details {
     background: #111;
     padding: 30px;
@@ -395,10 +382,6 @@ input:focus, textarea:focus {
     border-radius: 15px;
     box-shadow: 0 0 25px rgba(255,0,0,0.3);
     color: white;
-}
-
-.hidden {
-    display: none;
 }
 
 .details-content {
@@ -420,9 +403,11 @@ input:focus, textarea:focus {
     font-weight: bold;
 }
 
+.hidden {
+    display: none;
+}
 
-
-/* Full Page Detail */
+/* Full Page Detail (File A) */
 #detail-page {
     padding: 40px;
 }
@@ -467,3 +452,183 @@ input:focus, textarea:focus {
     color: #ff3c3c;
 }
 
+
+/* |--------------------------------------------------------------------------
+| 8. SIGN-IN / SIGN-UP / FORGOT BOXES
+|--------------------------------------------------------------------------
+*/
+
+/* Sign-in Box (Consolidated - Used File B's width and margin, and included File B's form structure) */
+.signin-box {
+    /* File B properties */
+    width: 400px;
+    max-width: 90%; 
+    background: #1a0c0f; /* darker maroon/black background */
+    padding: 40px;
+    margin: 80px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(196,30,58,0.5);
+    text-align: center;
+    /* File A border styles retained for extra effect */
+    border-top: 3px solid #7d0f21;
+    border-bottom: 3px solid #7d0f21;
+}
+
+.signin-box h2 {
+    color: #c41e3a;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.form-group { /* Unique to File B's structure */
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label { /* Unique to File B's structure */
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.btn-signin {
+    width: 100%; /* From File B */
+    padding: 12px; /* From File B */
+    font-size: 18px;
+    margin-top: 10px;
+    border-radius: 10px; /* From File B */
+    /* Other styles inherited from standard button */
+}
+
+.links { /* Unique to File B */
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.links a { /* Unique to File B */
+    color: #c41e3a;
+}
+
+.links a:hover { /* Unique to File B */
+    color: #ff4f5a;
+}
+
+/* Sign-Up Box (Unique to File B) */
+.signup-box {
+    width: 400px;
+    max-width: 90%;
+    background: #1a0c0f;
+    padding: 40px;
+    margin: 80px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(196,30,58,0.5);
+    text-align: center;
+}
+
+.signup-box h2 {
+    color: #c41e3a;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.btn-signup {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+    border-radius: 10px;
+    /* Other styles inherited from standard button */
+}
+
+/* Forgot Password Box (Unique to File B) */
+.forgot-box {
+    width: 400px;
+    max-width: 90%;
+    background: #1a0c0f;
+    padding: 40px;
+    margin: 80px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(196,30,58,0.5);
+    text-align: center;
+}
+
+.forgot-box h2 {
+    color: #c41e3a;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.forgot-box p {
+    color: #ccc;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.btn-reset {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+    border-radius: 10px;
+    /* Other styles inherited from standard button */
+}
+
+
+/* |--------------------------------------------------------------------------
+| 9. FOOTER
+|--------------------------------------------------------------------------
+*/
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #1a0c0f;
+    color: #c5c6c7;
+}
+
+
+/* |--------------------------------------------------------------------------
+| 10. RESPONSIVE STYLES (@media queries)
+|--------------------------------------------------------------------------
+*/
+
+/* Tablet/Medium Screens (768px) - Consolidated */
+@media(max-width:768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    /* Layouts switch to column and use reduced padding */
+    .movie-detail-container, .about-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .poster img, .about-left img {
+        width: 100%;
+    }
+    /* Horizontal scroll utility styles */
+    .scroll-horizontal {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        scroll-behavior: smooth;
+    }
+}
+
+/* Mobile/Small Screens (500px) - Unique to File B Sign-In Box */
+@media(max-width: 500px) {
+    .signin-box, .signup-box, .forgot-box {
+        padding: 30px 20px;
+        margin: 50px auto;
+    }
+
+    .btn-signin, .btn-signup, .btn-reset {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
