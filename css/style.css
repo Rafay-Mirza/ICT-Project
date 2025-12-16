@@ -198,7 +198,7 @@ input:focus, textarea:focus {
     align-items: center;
     justify-content: center;
     padding: 0 40px;
-    background: url("images/download (1).jpeg") center/cover no-repeat;
+    background: url("../images/download (1).jpeg") center/cover no-repeat;
     overflow: hidden;
     border-bottom: 3px solid #b1122d;
 }
