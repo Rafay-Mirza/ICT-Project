@@ -636,3 +636,136 @@ footer {
     text-align: center;
     margin-top: 20px;
 }
+
+/* |--------------------------------------------------------------------------
+| 10. RESPONSIVE STYLES (Optimized for Mobile, Tablet, and Desktop)
+|--------------------------------------------------------------------------
+*/
+
+/* Laptop & Large Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 30px;
+    }
+
+    .hero-left h1 {
+        font-size: 36px;
+    }
+
+    .movies-grid, .movies {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+}
+
+/* Tablets & Small Laptops (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    nav a {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .search-box {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .search-box input {
+        width: 70%;
+    }
+
+    .hero {
+        height: auto;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero-left h1 {
+        font-size: 28px;
+    }
+
+    .hero-description {
+        margin: 0 auto;
+    }
+
+    /* Stack layout for About and Details pages */
+    .about-container, .movie-detail-container, .detail-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .about-left img, .poster img, .detail-poster {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .section, .category {
+        padding: 30px 15px;
+    }
+
+    /* Horizontal scroll on mobile for categories */
+    .scroll-horizontal {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 15px;
+        gap: 15px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .scroll-horizontal .movie-card {
+        min-width: 150px;
+    }
+}
+
+/* Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 24px;
+    }
+
+    .search-box input {
+        width: 60%;
+        padding: 8px 12px;
+    }
+
+    .signin-box, .signup-box, .forgot-box {
+        width: 95%;
+        padding: 25px 15px;
+        margin: 40px auto;
+    }
+
+    .signin-btn, .signup-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .detail-info h1 {
+        font-size: 26px;
+    }
+
+    .movie-card h3 {
+        font-size: 0.9rem;
+    }
+}
+
+/* Utility for Hidden Elements */
+.hidden {
+    display: none !important;
+}
